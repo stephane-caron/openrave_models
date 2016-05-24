@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+"""Load robot model with additional six DOFs for the floating base."""
+
 import IPython
 import openravepy
 import os

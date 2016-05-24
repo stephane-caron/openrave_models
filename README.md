@@ -1,6 +1,10 @@
 # openrave\_models
 
-Humanoid robot models for OpenRAVE.
+Humanoid robot models for OpenRAVE:
+
+- [JAXON](#jaxon)
+- [JVRC-1](#jvrc-1)
+- [Romeo](#romeo)
 
 ## JAXON
 
