@@ -2,7 +2,7 @@
 
 A repository of humanoid robot models for OpenRAVE.
 
-**Contents:**
+Currently includes:
 
 1. [JAXON](#jaxon)
 2. [JVRC-1](#jvrc-1)
