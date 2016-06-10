@@ -4158,12 +4158,37 @@
 					</axis_info>
 				</technique_common>
 			</motion>
-			<extra name="right_hand_palm" type="manipulator">
+            <!--
+			<extra name="right_hand_top" type="manipulator">
 				<technique profile="OpenRAVE">
 					<frame_origin link="kmodel1/link0"/>
 					<frame_tip link="kmodel1/link25">
 						<translate>0 0.0225 -0.06</translate>
 						<rotate>1 0 0 -65</rotate>
+						<rotate>0 1 0 180</rotate>
+						<rotate>0 0 1 90</rotate>
+					</frame_tip>
+				</technique>
+			</extra>
+			<extra name="left_hand_top" type="manipulator">
+				<technique profile="OpenRAVE">
+					<frame_origin link="kmodel1/link0"/>
+					<frame_tip link="kmodel1/link38">
+						<translate>0 -0.0225 -0.06</translate>
+						<rotate>1 0 0 65</rotate>
+						<rotate>0 1 0 180</rotate>
+						<rotate>0 0 1 -90</rotate>
+					</frame_tip>
+				</technique>
+			</extra>
+            -->
+			<extra name="right_hand_palm" type="manipulator">
+				<technique profile="OpenRAVE">
+					<frame_origin link="kmodel1/link0"/>
+					<frame_tip link="kmodel1/link25">
+						<translate>0 -0.015 -0.07</translate>
+						<rotate>1 0 0 -90</rotate>
+						<rotate>0 0 1 90</rotate>
 					</frame_tip>
 				</technique>
 			</extra>
@@ -4171,8 +4196,9 @@
 				<technique profile="OpenRAVE">
 					<frame_origin link="kmodel1/link0"/>
 					<frame_tip link="kmodel1/link38">
-						<translate>0 -0.0225 -0.06</translate>
-						<rotate>1 0 0 65</rotate>
+						<translate>0 0.015 -0.07</translate>
+						<rotate>1 0 0 90</rotate>
+						<rotate>0 0 1 -90</rotate>
 					</frame_tip>
 				</technique>
 			</extra>
