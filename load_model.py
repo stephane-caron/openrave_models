@@ -1,22 +1,115 @@
 #!/usr/bin/env python
 
-"""Load robot model with additional six DOFs for the floating base."""
+"""
+Load robot model with additional six DOFs for the floating base.
+"""
 
 import IPython
 import openravepy
-import os
+import os.path
 import sys
 
+free_flyer_xml = """
+<environment>
+    <robot>
+        <kinbody>
+            <body name="FLYER_TX_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <kinbody>
+            <body name="FLYER_TY_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <kinbody>
+            <body name="FLYER_TZ_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <kinbody>
+            <body name="FLYER_ROLL_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <kinbody>
+            <body name="FLYER_PITCH_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <kinbody>
+            <body name="FLYER_YAW_LINK">
+                <mass type="mimicgeom">
+                    <total>0</total>
+                </mass>
+            </body>
+        </kinbody>
+        <robot file="%s" name="%s">
+            <kinbody>
+                <joint name="FLYER_TX" type="slider" circular="true">
+                    <body>FLYER_TX_LINK</body>
+                    <body>FLYER_TY_LINK</body>
+                    <axis>1 0 0</axis>
+                    <limits>-10 +10</limits>
+                </joint>
+                <joint name="FLYER_TY" type="slider" circular="true">
+                    <body>FLYER_TY_LINK</body>
+                    <body>FLYER_TZ_LINK</body>
+                    <axis>0 1 0</axis>
+                    <limits>-10 +10</limits>
+                </joint>
+                <joint name="FLYER_TZ" type="slider" circular="true">
+                    <body>FLYER_TZ_LINK</body>
+                    <body>FLYER_ROLL_LINK</body>
+                    <axis>0 0 1</axis>
+                    <limits>-10 +10</limits>
+                </joint>
+                <joint name="FLYER_ROLL" type="hinge" circular="true">
+                    <body>FLYER_ROLL_LINK</body>
+                    <body>FLYER_PITCH_LINK</body>
+                    <axis>1 0 0</axis>
+                </joint>
+                <joint name="FLYER_PITCH" type="hinge" circular="true">
+                    <body>FLYER_PITCH_LINK</body>
+                    <body>FLYER_YAW_LINK</body>
+                    <axis>0 1 0</axis>
+                </joint>
+                <joint name="FLYER_YAW" type="hinge" circular="true">
+                    <body>FLYER_YAW_LINK</body>
+                    <body>%s</body>
+                    <axis>0 0 1</axis>
+                </joint>
+            </kinbody>
+        </robot>
+    </robot>
+</environment>
+"""
 
 if __name__ == "__main__":
-    dirs = sorted([
-        os.path.basename(d) for d in os.listdir('.')
-        if os.path.isdir(d) and d[0] != '.'])
-    if len(sys.argv) < 2 or sys.argv[1] not in dirs:
-        print "Usage: %s [%s]" % (sys.argv[0], '|'.join(dirs))
-        exit(0)
+    if not sys.argv[-1].endswith('.dae'):
+        print "Usage: %s model.dae" % sys.argv[0]
+        sys.exit()
+    elif not os.path.isfile(sys.argv[-1]):
+        print "Could not open file %s" % sys.argv[-1]
+        sys.exit()
+    fpath = sys.argv[-1]
+    name = os.path.basename(os.path.splitext(fpath)[0])
+    root_body = \
+        'BODY' if 'JAXON' in name else \
+        'PELVIS_S' if 'JVRC' in name else \
+        'base_link'  # for Romeo
     env = openravepy.Environment()
-    env.Load('%s/env.xml' % sys.argv[1])
+    env.LoadData(free_flyer_xml % (fpath, name, root_body))
     env.SetViewer('qtcoin')
     viewer = env.GetViewer()
     viewer.SetBkgndColor([.8, .85, .9])  # RGB tuple
@@ -26,4 +119,5 @@ if __name__ == "__main__":
          [-0.02231752, -0.90348492, -0.42803846, 1.20491762],
          [0., 0., 0., 1.]])
     robot = env.GetRobots()[0]
-    IPython.embed()
+    if IPython.get_ipython() is None:
+        IPython.embed()

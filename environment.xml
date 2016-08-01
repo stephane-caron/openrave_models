@@ -43,7 +43,7 @@
                 </mass>
             </body>
         </kinbody>
-        <robot file="Romeo.dae" name="Romeo">
+        <robot file="model_file.dae" name="model_name">  <!-- update this -->
             <kinbody>
                 <joint name="TRANS_X" type="slider">
                     <body>TRANS_X_LINK</body>
@@ -72,7 +72,7 @@
                 </joint>
                 <joint name="ROT_Y" type="hinge" circular="true">
                     <body>ROT_Y_LINK</body>
-                    <body>base_link</body>
+                    <body><!-- name of the root link of your model --></body>
                     <axis>0 0 1</axis>
                 </joint>
             </kinbody>
@@ -81,7 +81,7 @@
     <!--
     <kinbody name="floor">
         <body type="static">
-            <translation>0 0 -1.0175</translation>
+            <translation>0 0 -0.854</translation>
             <geom type="box">
                 <extents>1 1 0.005</extents>
                 <translation>0 0 0</translation>
