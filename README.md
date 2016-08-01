@@ -4,9 +4,9 @@ A repository of humanoid robot models for OpenRAVE.
 
 Currently includes, in alphabetic order:
 
-- [JAXON](/tree/master/JAXON)
-- [JVRC-1](/tree/master/JVRC-1)
-- [Romeo](/tree/master/Romeo)
+- [JAXON](/JAXON)
+- [JVRC-1](/JVRC-1)
+- [Romeo](/Romeo)
 
 ## Example
 
