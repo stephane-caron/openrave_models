@@ -1,7 +1,5 @@
 # Robot models for OpenRAVE
 
-Romeo, JAXON and other robot models for [OpenRAVE](https://github.com/rdiankov/openrave).
-
 ## Usage
 
 You can run the script ``load_model.py`` to show a given model, for instance:
