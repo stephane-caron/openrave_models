@@ -1,14 +1,8 @@
-# openrave\_models
+# Robot models for OpenRAVE
 
-A repository of humanoid robot models for OpenRAVE.
+Romeo, JAXON and other robot models for [OpenRAVE](https://github.com/rdiankov/openrave).
 
-Currently includes, in alphabetic order:
-
-- [JAXON](/JAXON)
-- [JVRC-1](/JVRC-1)
-- [Romeo](/Romeo)
-
-## Example
+## Usage
 
 You can run the script ``load_model.py`` to show a given model, for instance:
 
