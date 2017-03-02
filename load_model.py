@@ -107,7 +107,8 @@ if __name__ == "__main__":
     root_body = \
         'BODY' if 'JAXON' in name else \
         'PELVIS_S' if 'JVRC' in name else \
-        'base_link'  # for Romeo
+        'base_link' if 'Romeo' in name else \
+        'WAIST'  # for NEXTAGE
     env = openravepy.Environment()
     env.LoadData(free_flyer_xml % (fpath, name, root_body))
     env.SetViewer('qtcoin')
