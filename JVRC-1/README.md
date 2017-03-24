@@ -1,4 +1,4 @@
-## JVRC-1
+## JVRC-1 model for OpenRAVE
 
 Model files released during the [Japan Virtual Robotics
 Challenge](https://jvrc.org/en/download.html). COLLADA conversions were done

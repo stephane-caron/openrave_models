@@ -1,4 +1,4 @@
-## Romeo
+## Romeo model for OpenRAVE
 
 Model files for the [Romeo](http://projetromeo.com/) humanoid robot designed by
 [Aldebaran Robotics](https://www.ald.softbankrobotics.com/). It is publicly

@@ -1,4 +1,4 @@
-## NEXTAGE
+## NEXTAGE model for OpenRAVE
 
 Model files for the [NEXTAGE](http://nextage.kawada.jp/en/) dual-arm robot designed by
 [KAWADA Technologies](http://www.kawada.jp/). It is publicly

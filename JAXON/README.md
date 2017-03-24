@@ -1,4 +1,4 @@
-## JAXON
+## JAXON model for OpenRAVE
 
 Model files released during the [Japan Virtual Robotics
 Challenge](https://jvrc.org/en/download.html). This model is licensed under a
