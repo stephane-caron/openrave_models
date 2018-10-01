@@ -8,5 +8,5 @@ Model files for the [Romeo](http://projetromeo.com/) humanoid robot designed by
 ### License
 
 This model is publicly distributed in the
-[romeo\_description](http://wiki.ros.org/romeo\_description>) package under a
+[romeo\_description](http://wiki.ros.org/romeo\_description) package under a
 BSD license.
