@@ -8,13 +8,11 @@ directly. I have converted them to COLLADA using the ``openhrp-export-collada``
 tool from [openhrp3](https://github.com/fkanehiro/openhrp3).
 
 You can download and display the robot model by:
-
 ```
 $ git clone https://github.com/stephane-caron/openrave_models
 $ cd openrave_models
 $ python show_model.py JVRC-1
 ```
-
 The model is in false colors as OpenRAVE doesn't read textures:
 
 <img src="https://scaron.info/images/openrave/jvrc-1.png" width="600">
@@ -26,8 +24,3 @@ humanoid model for a simulation competition, Japanese National Institute of
 Advanced Industrial Science and Technology, ref. H27PRO-1843"
 (シミュレーション競技会用サンプルヒューマノイドモデル、産業技術総合研究所
 H27PRO-1843).
-
-Conveniently, JVRC-1 has roughly the same kinematic chain as HRP-4. See [its
-interface in
-pymanoid](https://github.com/stephane-caron/pymanoid/blob/master/pymanoid/robots/jvrc1.py)
-for details.
